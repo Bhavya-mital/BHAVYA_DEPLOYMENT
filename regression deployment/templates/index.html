@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+
+</head>
+<body>
+
+
+<h2>Predicting Quality Model</h2>
+
+<p>Enter the data:</p>
+
+<form action="{{ url_for('predict')}}"method="post">
+    <p>Fixed Acidity:</p>
+    <input type="number" id="fixed acidity" name="fixed acidity" step="0.001" ><br><br>
+    <p>Volatile Acidity:</p>
+    <input type="number" id="volatile acidity" name="volatile acidity" step="0.001" ><br><br>
+    <p>Amount of Citric Acid Present:</p>
+    <input type="number" id="citric acid" name="citric acid" step="0.001" ><br><br>
+    <p>Amount of Residual Sugar :</p>
+    <input type="number" id="residual sugar" name="residual sugar" step="0.001" ><br><br>
+    <p>Chlorides Present:</p>
+    <input type="number" id="chlorides" name="chlorides" step="0.001" ><br><br>
+    <p>Amount of Free Sulfur Dioxide:</p>
+    <input type="number" id="free sulphur dioxide" name="free sulphur dioxide" step="0.001" ><br><br>
+    <p>Amount of Total Sulfur Dioxide:</p>
+    <input type="number" id="total sulphur dioxide" name="total sulphur dioxide" step="0.001" ><br><br>
+    <p>Density:</p>
+    <input type="number" id="density" name="density" step="0.000001" ><br><br>
+    <p>Ph Present:</p>
+    <input type="number" id="ph" name="ph" step="0.001"><br><br>
+    <p>Amount of Sulphates Present:</p>
+    <input type="number" id="sulphates" name="sulphates" step="0.001" ><br><br>
+    <p>Amount of Alcohol Present:</p>
+    <input type="number" id="alcohol" name="alcohol" step="0.001" ><br><br>
+    <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    <pre>"1" to "8" represents quality of the wine in increasing order
+          Resultant Quality Of The Wine On The Basis Of Above Filled Data Is::
+    </pre>
+    
+
+   <br>
+   <br>
+   {{ prediction_text }}
+</form>
+
+ 
+
+
+</body>
+</html>
+
